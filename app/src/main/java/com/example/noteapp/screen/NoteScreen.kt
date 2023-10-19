@@ -54,7 +54,7 @@ fun NoteScreen(
             modifier = Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally
         ) {
             NoteInputText(
-                text = title, label = "title", onTextChange = {
+                text = title, label = "tile", onTextChange = {
                     if (it.all { char ->
                             char.isLetter() || char.isWhitespace()
                         }) title = it
