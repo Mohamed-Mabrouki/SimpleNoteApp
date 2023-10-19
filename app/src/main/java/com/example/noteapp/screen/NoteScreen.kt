@@ -107,7 +107,7 @@ fun NoteRow(
             horizontalAlignment = Alignment.Start) {
             Text(text = note.title)
             Text(text = note.description)
-            Text(text = note.entryDate.format(DateTimeFormatter.ofPattern("EEE, d MMM")))
+//            Text(text = note.entryDate.format(DateTimeFormatter.ofPattern("EEE, d MMM")))
         }
     }
 }
