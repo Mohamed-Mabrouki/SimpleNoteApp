@@ -61,7 +61,7 @@ dependencies {
     // Coroutines
     implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.2")
     implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.2")
-
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.5.2")
     //Dagger - Hilt
     implementation ("com.google.dagger:hilt-android:2.46.1")
     kapt ("com.google.dagger:hilt-android-compiler:2.46.1")
@@ -73,6 +73,7 @@ dependencies {
 
     // Kotlin Extensions and Coroutines support for Room
     implementation ("androidx.room:room-ktx:2.5.2")
+    annotationProcessor("androidx.room:room-compiler:2.5.2")
 
 
 
