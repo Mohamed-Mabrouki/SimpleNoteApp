@@ -25,14 +25,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.noteapp.R
 import com.example.noteapp.components.NoteButton
 import com.example.noteapp.components.NoteInputText
-import com.example.noteapp.data.NoteDataSource
 import com.example.noteapp.model.Note
-import java.time.format.DateTimeFormatter
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun NoteScreen(
@@ -54,7 +51,7 @@ fun NoteScreen(
             modifier = Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally
         ) {
             NoteInputText(
-                text = title, label = "title", onTextChange = {
+                text = title, label = "tile", onTextChange = {
                     if (it.all { char ->
                             char.isLetter() || char.isWhitespace()
                         }) title = it
@@ -100,19 +97,15 @@ fun NoteRow(
             )
     ) {
         Column(modifier = Modifier
-            .clickable { onNoteClicked(note)
-            println("note is $note")
+            .clickable {
+                onNoteClicked(note)
+                println("note is $note")
             }
             .padding(horizontal = 14.dp, vertical = 6.dp),
             horizontalAlignment = Alignment.Start) {
             Text(text = note.title)
             Text(text = note.description)
-//            Text(text = note.entryDate.format(DateTimeFormatter.ofPattern("EEE, d MMM")))
+            Text(text = note.entryDate.toString())
         }
     }
-}
-@Preview(showBackground = true)
-@Composable
-private fun NoteScreenPreview() {
-    NoteScreen(notes = NoteDataSource().loadNotes(), onAddNote = {}, onRemoveNote = {})
 }

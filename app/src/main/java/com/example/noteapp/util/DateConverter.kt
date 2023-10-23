@@ -1,18 +1,22 @@
 package com.example.noteapp.util
 
+import androidx.room.ProvidedTypeConverter
 import androidx.room.TypeConverter
-import java.sql.Timestamp
+import java.time.LocalDateTime
 import java.util.Date
 
-class DateConverter {
-	@TypeConverter
-	fun timeStampFromDate(date:Date): Long{
-		return date.time
 
+class Converter {
+	@TypeConverter
+	fun timetoString(value: LocalDateTime): String {
+		return value.toString()
 	}
 	@TypeConverter
-	fun dateFromTimestamp(timestamp : Long): Date{
-		return Date(timestamp)
-
+	fun stringToTime(string:String): LocalDateTime {
+		return LocalDateTime.parse(string)
 	}
+
+
+
+
 }
